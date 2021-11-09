@@ -1,0 +1,118 @@
+.shop {
+  background: linear-gradient(
+    0deg,
+    rgba(37, 5, 49, 1) 90%,
+    rgba(37, 5, 49, 0.43461134453781514) 97%,
+    rgba(37, 5, 49, 0) 100%
+  );
+  padding-top: 120px;
+  position: relative;
+  top: -171px;
+  margin-bottom: -171px;
+  padding-bottom: 80px;
+
+  @media (max-width: 991px) {
+    padding-top: 75px;
+  }
+}
+
+.shop__title {
+  @include title;
+  text-align: center;
+  margin-bottom: 85px;
+  @include max-width(962px);
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.shop__content {
+  display: flex;
+  margin-bottom: 80px;
+  position: relative;
+
+  @media (max-width: 991px) {
+    margin-bottom: 40px;
+  }
+
+  @media (max-width: 767px) {
+    flex-direction: column;
+    @include max-width(572px);
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  &::after {
+    z-index: -1;
+    position: absolute;
+    content: url('/src/img/shop-smoke.png');
+    right: -389px;
+    bottom: -400px;
+  }
+}
+
+.shop__side {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+
+  @media (max-width: 767px) {
+    width: 100%;
+
+    &:nth-child(2) img {
+      order: 2;
+    }
+  }
+}
+
+.shop__text-box {
+  padding-left: 63px;
+  padding-right: 63px;
+  padding-bottom: 25px;
+  padding-top: 29px;
+  min-height: 161px;
+  background-color: #323f6c;
+
+  @media (max-width: 991px) {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+
+  @media (max-width: 650px) {
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
+}
+
+.shop__text-img {
+  width: 100%;
+}
+
+.shop__text-title {
+  font-size: 24px;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 11px;
+}
+
+.shop__text {
+  font-family: 'PTSans';
+  margin-bottom: 0;
+  text-align: center;
+
+  @media (max-width: 991px) {
+    font-size: 15px;
+  }
+
+  @media (max-width: 767px) {
+    font-size: 18px;
+  }
+}
+
+.shop__note {
+  font-size: 23px;
+  @include max-width(837px);
+  margin-bottom: 0;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}

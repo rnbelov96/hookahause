@@ -1,0 +1,145 @@
+.desc {
+  min-height: 1010px;
+  @include bg;
+  background-image: url('/src/img/bgs/desc-bg.jpg');
+  padding-top: 35px;
+  padding-bottom: 139px;
+
+  @media (max-width: 650px) {
+    padding-top: 10px;
+    min-height: auto;
+  }
+}
+
+.desc__content {
+  display: flex;
+  justify-content: space-between;
+  gap: 30px;
+  margin-top: 50px;
+  margin-bottom: 34px;
+
+  @media (max-width: 1150px) {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  @media (max-width: 650px) {
+    margin-top: 20px;
+    gap: 0px;
+  }
+}
+
+.desc__left-side {
+  @include max-width(585px);
+
+  @media (max-width: 1150px) {
+    max-width: 100%;
+  }
+}
+
+.desc__title {
+  font-size: 50px;
+  line-height: 1.16;
+  font-weight: bold;
+  margin-bottom: 43px;
+
+  @media (max-width: 767px) {
+    font-size: 40px;
+  }
+
+  @media (max-width: 650px) {
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+
+  span {
+    color: $yellow;
+    text-decoration: underline;
+  }
+
+  b {
+    font-weight: bold;
+    font-size: 71px;
+    text-transform: uppercase;
+
+    @media (max-width: 767px) {
+      font-size: 60px;
+    }
+
+    @media (max-width: 650px) {
+      font-size: 36px;
+    }
+  }
+}
+
+.desc__text {
+  @include max-width(464px);
+  font-size: 23px;
+  margin-bottom: 42px;
+
+  @media (max-width: 1150px) {
+    max-width: 100%;
+  }
+
+  @media (max-width: 650px) {
+    margin-bottom: 20px;
+  }
+}
+
+.desc__list {
+  @include reset-list;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 25px;
+
+  @media (max-width: 1150px) {
+    justify-content: space-around;
+  }
+
+  @media (max-width: 650px) {
+    gap: 15px;
+    margin-bottom: 20px;
+  }
+}
+
+.desc__item {
+  padding-left: 58px;
+  position: relative;
+  @include max-width(274px);
+
+  @media (max-width: 650px) {
+    max-width: 100%;
+    min-height: 44px;
+    font-size: 16px;
+  }
+
+  &::before {
+    position: absolute;
+    top: 3px;
+    left: 0px;
+    width: 41px;
+    height: 41px;
+  }
+
+  @for $i from 1 through 4 {
+    &:nth-child(#{$i})::before {
+      content: url('/src/img/icons/desc/#{$i}.svg');
+    }
+  }
+}
+
+.desc__right-side {
+  @include max-width(458px);
+}
+
+.desc__devider {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+
+  @media (max-width: 650px) {
+    width: 300px;
+    height: 44px;
+  }
+}

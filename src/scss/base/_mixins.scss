@@ -1,0 +1,51 @@
+@mixin bg {
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+@mixin reset-btn {
+  padding: 0;
+  background-color: transparent;
+  border: 0;
+  color: inherit;
+  outline: none;
+
+  &:focus {
+    outline: none;
+  }
+}
+
+@mixin reset-list {
+  padding: 0;
+  list-style: none;
+  margin-bottom: 0;
+}
+
+@mixin max-width($width) {
+  width: 100%;
+  max-width: $width;
+}
+
+@mixin central-align {
+  top: 50%;
+  left: 50%;
+  transform: translate3d(-50%, -50%, 0);
+}
+
+@mixin title {
+  font-size: 46px;
+
+  span {
+    color: $yellow;
+  }
+
+  @media (max-width: 991px) {
+    font-size: 36px;
+    margin-bottom: 40px;
+  }
+
+  @media (max-width: 650px) {
+    margin-bottom: 30px;
+  }
+}
