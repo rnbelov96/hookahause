@@ -1,0 +1,99 @@
+.gains {
+  padding-top: 80px;
+  padding-bottom: 80px;
+  position: relative;
+  z-index: -1;
+
+  @media (max-width: 767px) {
+    padding-bottom: 50px;
+  }
+}
+
+.gains__title {
+  @include title;
+  margin-bottom: 73px;
+
+  @media (max-width: 815px) {
+    br {
+      display: none;
+    }
+  }
+}
+
+.gains__text {
+  font-size: 23px;
+  @include max-width(583px);
+  margin-bottom: 45px;
+
+  @media (max-width: 650px) {
+    margin-bottom: 25px;
+  }
+
+  &::after {
+    z-index: -1;
+    position: absolute;
+    content: url('/src/img/gains-smoke.png');
+    right: -387px;
+    top: -826px;
+  }
+}
+
+.gains__list {
+  @include reset-list;
+  @include max-width(561px);
+  margin-bottom: 44px;
+  position: relative;
+
+  @media (max-width: 650px) {
+    margin-bottom: 25px;
+  }
+
+  &::after {
+    z-index: -1;
+    position: absolute;
+    content: url('/src/img/gains-woman.png');
+    right: -960px;
+    top: -717px;
+
+    @media (max-width: 1000px) {
+      right: -808px;
+    }
+
+    @media (max-width: 800px) {
+      content: none;
+    }
+  }
+}
+
+.gains__item {
+  padding-left: 55px;
+  position: relative;
+  font-family: 'PTSans';
+  margin-bottom: 25px;
+
+  @media (max-width: 650px) {
+    margin-bottom: 15px;
+    font-size: 16px;
+    padding-left: 45px;
+  }
+
+  &::before {
+    content: url('/src/img/icons/check2.svg');
+    width: 39px;
+    height: 39px;
+    left: 0px;
+    top: 50%;
+    transform: translateY(-50%);
+    position: absolute;
+  }
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.gains__note {
+  font-family: 'PTSans';
+  margin-bottom: 0;
+  @include max-width(557px);
+}

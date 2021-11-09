@@ -28,7 +28,7 @@ main {
   max-width: 1144px;
   margin: 0 auto;
 
-  &_market, &_digits, &_grow {
+  &_market, &_digits, &_grow, &_gains {
     &::before {
       position: absolute;
       left: -0px;
@@ -50,6 +50,12 @@ main {
   &_digits {
     &::before {
       top: -126px;
+    }
+  }
+
+  &_gains {
+    &::before {
+      top: -116px;
     }
   }
 
