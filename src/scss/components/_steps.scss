@@ -1,0 +1,127 @@
+.steps {
+  padding-top: 84px;
+  padding-bottom: 80px;
+  position: relative;
+  z-index: 1;
+
+  @media (max-width: 991px) {
+    padding-bottom: 40px;
+  }
+
+  @media (max-width: 650px) {
+    padding-bottom: 20px;
+  }
+}
+
+.steps__title {
+  @include title;
+  @include max-width(1077px);
+  margin-bottom: 51px;
+}
+
+.steps__list {
+  @include reset-list;
+  position: relative;
+
+  &::before {
+    position: absolute;
+    left: -384px;
+    top: -520px;
+    content: url('/src/img/steps-smoke.png');
+    z-index: -1;
+  }
+
+  &::after {
+    position: absolute;
+    left: -391px;
+    top: 610px;
+    content: url('/src/img/city-smoke.png');
+    z-index: -1;
+  }
+}
+
+.steps__item {
+  padding-top: 25px;
+  padding-bottom: 25px;
+  padding-right: 35px;
+  padding-left: 440px;
+  min-height: 123px;
+  border-top: 1px dotted white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  position: relative;
+
+  @media (max-width: 991px) {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 344px;
+    padding-right: 15px;
+  }
+
+  @media (max-width: 650px) {
+    padding-left: 44px;
+  }
+
+  &::before {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 0px;
+    width: 385px;
+    height: 121px;
+    content: '';
+    @include bg;
+
+    @media (max-width: 991px) {
+      width: 320px;
+    }
+
+    @media (max-width: 650px) {
+      content: none;
+    }
+  }
+
+  &::after {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 354px;
+    font-size: 112px;
+    font-weight: 300;
+
+    @media (max-width: 991px) {
+      left: 280px;
+    }
+
+    @media (max-width: 650px) {
+      left: 0px;
+      font-size: 70px;
+    }
+  }
+
+  @for $i from 1 through 7 {
+    &:nth-child(#{$i}) {
+      &::before {
+        background-image: url('/src/img/gallery/steps/#{$i}.jpg');
+      }
+      &::after {
+        content: '#{$i}';
+      }
+    }
+  }
+}
+
+.steps__item-title {
+  font-family: 'PTSans';
+  text-transform: uppercase;
+  font-weight: bold;
+  margin-bottom: 0;
+  color: $yellow;
+}
+
+.steps__item-text {
+  margin-bottom: 0;
+  font-family: 'PTSans';
+}

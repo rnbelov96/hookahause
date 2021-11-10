@@ -33,7 +33,9 @@ main {
   &_grow,
   &_gains,
   &_rating,
-  &_economy {
+  &_economy,
+  &_steps,
+  &_city {
     &::before {
       position: absolute;
       left: -43px;
@@ -52,6 +54,14 @@ main {
 
       @media (max-width: 767px) {
         top: -89px !important;
+      }
+    }
+  }
+
+  &_city {
+    &::before {
+      @media (max-width: 991px) {
+        top: -99px;
       }
     }
   }

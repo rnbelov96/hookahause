@@ -1,0 +1,75 @@
+.city {
+  padding-top: 95px;
+  padding-bottom: 60px;
+
+  @media (max-width: 991px) {
+    padding-bottom: 30px;
+  }
+}
+
+.city__title {
+  @include max-width(913px);
+  font-size: 50px;
+  line-height: 1.16;
+  font-weight: bold;
+  margin-bottom: 70px;
+
+  @media (max-width: 767px) {
+    font-size: 40px;
+  }
+
+  @media (max-width: 650px) {
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+
+  span {
+    color: $yellow;
+    text-decoration: underline;
+  }
+
+  b {
+    font-weight: bold;
+    font-size: 71px;
+    text-transform: uppercase;
+
+    @media (max-width: 767px) {
+      font-size: 60px;
+    }
+
+    @media (max-width: 650px) {
+      font-size: 36px;
+    }
+  }
+}
+
+.city__content {
+  display: flex;
+  justify-content: space-between;
+  gap: 30px;
+  position: relative;
+
+  @media (max-width: 991px) {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  &::after {
+    content: url('/src/img/bgs/city-bg.png');
+    position: absolute;
+    z-index: -1;
+    left: -390px;
+    bottom: -210px;
+  }
+}
+
+.city__text {
+  @include max-width(570px);
+  margin-bottom: 0;
+  font-size: 23px;
+  font-family: 'PTSans';
+
+  @media (max-width: 991px) {
+    max-width: 100%;
+  }
+}

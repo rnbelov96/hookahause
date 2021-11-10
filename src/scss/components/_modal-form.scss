@@ -1,4 +1,5 @@
 .modal-form {
+  @include max-width(458px);
   &_desc {
     @media (max-width: 650px) {
       display: none;
