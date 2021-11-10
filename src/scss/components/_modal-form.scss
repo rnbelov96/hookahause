@@ -5,6 +5,16 @@
       display: none;
     }
   }
+
+  &_modal {
+    width: 98%;
+    .modal-form__content {
+      background-color: white;
+    }
+    .modal-form__policy-text {
+      text-align: left;
+    }
+  }
 }
 
 .modal-form__content {
@@ -22,10 +32,6 @@
     padding-right: 20px;
     padding-bottom: 20px;
     min-height: auto;
-  }
-
-  &_modal {
-    width: 98%;
   }
 }
 

@@ -62,7 +62,7 @@
                 <li class="desc__item">Готовая база прямых поставщиков</li>
               </ul>
 
-              <button class="button button_present">
+              <button class="button button_present js-present">
                 Получить <br />
                 документацию
               </button>
@@ -88,7 +88,7 @@
                       <input
                         type="text"
                         name="phone"
-                        placeholder="+7(___)-___-__-__"
+                        placeholder="+7 (___) ___ ____"
                         data-type="phone"
                         class="modal-form__input"
                       />
@@ -161,7 +161,7 @@
                   <p class="modal-form__policy-text">
                     Я подтверждаю, что ознакомлен и даю согласие на обработку
                     персональных данных на условиях и для целей, определяемых
-                    <button class="js-policy">
+                    <button type="button" class="js-policy">
                       Политикой конфиденциальности
                     </button>
                   </p>
@@ -345,7 +345,7 @@
               <p class="line-form__policy">
                 Я подтверждаю, что ознакомлен и даю согласие на обработку
                 персональных данных на условиях и для целей, определяемых
-                <button class="js-policy">Политикой конфиденциальности</button>
+                <button type="button" class="js-policy">Политикой конфиденциальности</button>
               </p>
             </div>
           </form>
@@ -559,7 +559,7 @@
               <p class="line-form__policy">
                 Я подтверждаю, что ознакомлен и даю согласие на обработку
                 персональных данных на условиях и для целей, определяемых
-                <button class="js-policy">Политикой конфиденциальности</button>
+                <button type="button" class="js-policy">Политикой конфиденциальности</button>
               </p>
             </div>
           </form>
@@ -757,7 +757,7 @@
                 <span class="js-calc-result">268 800</span> ₽
               </p>
             </div>
-            <button class="button button_calc">
+            <button class="button button_calc js-count">
               получить более <br />
               подробный расчёт
             </button>
@@ -949,7 +949,7 @@
               <p class="line-form__policy">
                 Я подтверждаю, что ознакомлен и даю согласие на обработку
                 персональных данных на условиях и для целей, определяемых
-                <button class="js-policy">Политикой конфиденциальности</button>
+                <button type="button" class="js-policy">Политикой конфиденциальности</button>
               </p>
             </div>
           </form>
@@ -1054,7 +1054,7 @@
                     <input
                       type="text"
                       name="phone"
-                      placeholder="+7(___)-___-__-__"
+                      placeholder="+7 (___) ___ ____"
                       data-type="phone"
                       class="modal-form__input"
                     />
@@ -1126,7 +1126,7 @@
                 <p class="modal-form__policy-text">
                   Я подтверждаю, что ознакомлен и даю согласие на обработку
                   персональных данных на условиях и для целей, определяемых
-                  <button class="js-policy">
+                  <button type="button" class="js-policy">
                     Политикой конфиденциальности
                   </button>
                 </p>
@@ -1181,13 +1181,103 @@
 
     <div class="modal">
       <div class="modal__center-wrapper">
-        <form class="modal-form">
-          <h3 class="modal-form__title">
-            Оставьте заявку <span class="js-modal-form-title"></span>
-          </h3>
-          <button class="button button_modal-form js-modal-form-btn">
-            Получить документацию
-          </button>
+        <form class="modal-form modal-form_modal">
+          <div class="modal-form__content">
+            <h3 class="modal-form__title">
+              <span class="js-modal-form-title"></span>
+            </h3>
+            <div class="modal-form__input-container">
+              <div class="modal-form__input-box">
+                <input
+                  type="text"
+                  name="name"
+                  placeholder="Олег Бондарчук"
+                  data-type="name"
+                  class="modal-form__input"
+                />
+              </div>
+              <div class="modal-form__input-box">
+                <input
+                  type="text"
+                  name="phone"
+                  placeholder="+7 (___) ___ ____"
+                  data-type="phone"
+                  class="modal-form__input"
+                />
+              </div>
+              <div class="modal-form__input-box">
+                <input
+                  type="email"
+                  name="email"
+                  placeholder="example@mail.ru"
+                  data-type="email"
+                  class="modal-form__input"
+                />
+              </div>
+            </div>
+            <button type="submit" class="button button_modal js-modal-form-btn">
+              Получить <br />
+              документацию
+            </button>
+          </div>
+          <div class="modal-form__policy">
+            <input
+              type="checkbox"
+              id="policy-check-6"
+              class="modal-form__input-check visually-hidden"
+            />
+            <label class="modal-form__check-label" for="policy-check-6">
+              <svg
+                width="35"
+                height="35"
+                version="1.1"
+                id="Слой_1"
+                xmlns:x="&ns_extend;"
+                xmlns:i="&ns_ai;"
+                xmlns:graph="&ns_graphs;"
+                xmlns="http://www.w3.org/2000/svg"
+                xmlns:xlink="http://www.w3.org/1999/xlink"
+                x="0px"
+                y="0px"
+                viewBox="0 0 45 47"
+                style="enable-background: new 0 0 45 47"
+                xml:space="preserve"
+              >
+                <style type="text/css">
+                  .st0 {
+                    fill: #999999;
+                  }
+                  .st1 {
+                    fill: none;
+                    stroke: transparent;
+                    stroke-width: 3;
+                    stroke-linecap: square;
+                    stroke-miterlimit: 10;
+                  }
+                </style>
+                <g i:extraneous="self">
+                  <g>
+                    <path
+                      class="st0"
+                      d="M9.61,8.5h25.79c1.16,0,2.11,0.94,2.11,2.11v25.79c0,1.16-0.94,2.11-2.11,2.11H9.61
+      c-1.16,0-2.11-0.94-2.11-2.11V10.61C7.5,9.44,8.44,8.5,9.61,8.5z"
+                    />
+                    <polyline
+                      class="st1"
+                      points="13.93,24.08 18.53,30.22 30.8,16.42 			"
+                    />
+                  </g>
+                </g>
+              </svg>
+            </label>
+            <p class="modal-form__policy-text">
+              Я подтверждаю, что ознакомлен и даю согласие на обработку
+              персональных данных на условиях и для целей, определяемых
+              <button type="button" class="js-policy">
+                Политикой конфиденциальности
+              </button>
+            </p>
+          </div>
           <button
             data-modal-close=""
             class="modal__close"
@@ -1452,19 +1542,6 @@
           class="modal__close"
           title="Закрыть"
         ></button>
-      </div>
-    </div>
-    <div class="modal modal_video js-video-adv">
-      <div class="modal__center-wrapper">
-        <iframe
-          width="560"
-          height="315"
-          class="modal__video"
-          src="https://www.youtube.com/embed/p7-GpwMAnck"
-          frameborder="0"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-          allowfullscreen
-        ></iframe>
       </div>
     </div>
   </body>

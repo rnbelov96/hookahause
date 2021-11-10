@@ -1,5 +1,5 @@
 .input-error {
-  border: 1px solid #ce211f;
+  border-bottom: 1px solid #ce211f;
 
   & + svg {
     path,
@@ -44,4 +44,14 @@
       color: #ce211f;
     }
   }
+}
+
+.checkbox-input-error {
+  path {
+    fill: red;
+  }
+}
+
+.checkbox-input-error + p, .checkbox-input-error + p button {
+  color: red !important;
 }

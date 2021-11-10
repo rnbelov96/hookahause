@@ -5,10 +5,21 @@ declare let IMask: any;
 const formsList = document.querySelectorAll('form');
 
 formsList.forEach(form => {
-  const nameInputEl = form.querySelector('[data-type="name"]') as HTMLInputElement | null;
-  const phoneInputEl = form.querySelector('[data-type="phone"]') as HTMLInputElement;
-  const emailInputEl = form.querySelector('[data-type="email"]') as HTMLInputElement;
-  const cityInputEl = form.querySelector('[data-type="city"]') as HTMLInputElement | null;
+  const nameInputEl = form.querySelector(
+    '[data-type="name"]',
+  ) as HTMLInputElement | null;
+  const phoneInputEl = form.querySelector(
+    '[data-type="phone"]',
+  ) as HTMLInputElement;
+  const emailInputEl = form.querySelector(
+    '[data-type="email"]',
+  ) as HTMLInputElement;
+  const cityInputEl = form.querySelector(
+    '[data-type="city"]',
+  ) as HTMLInputElement | null;
+  const checkboxLabelEl = form.querySelector(
+    'label',
+  ) as HTMLLabelElement | null;
 
   let phoneMask: any;
   phoneInputEl.addEventListener('focus', () => {
@@ -32,13 +43,19 @@ formsList.forEach(form => {
     }
   });
 
-  const onFocus = ((e: Event) => {
+  const onFocus = (e: Event) => {
     const targerEl = e.currentTarget as HTMLInputElement;
     targerEl.classList.remove('input-error');
-  });
+  };
 
   nameInputEl?.addEventListener('focus', onFocus);
   phoneInputEl.addEventListener('focus', onFocus);
   emailInputEl.addEventListener('focus', onFocus);
   cityInputEl?.addEventListener('focus', onFocus);
+
+  checkboxLabelEl?.addEventListener('click', e => {
+    (e.currentTarget as HTMLLabelElement).classList.remove(
+      'checkbox-input-error',
+    );
+  });
 });

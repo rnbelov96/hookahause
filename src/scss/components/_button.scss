@@ -49,6 +49,14 @@
     bottom: 0px;
     transform: translateX(-50%) translateY(50%);
     left: 50%;
+
+    &:active {
+      background: #285b88;
+      box-shadow: none;
+      bottom: 0px;
+      height: 75px;
+      top: initial !important;
+    }
   }
 
   &:hover {

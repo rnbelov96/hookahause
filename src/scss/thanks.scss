@@ -5,90 +5,171 @@
 @import './base/global.scss';
 @import './components/modal.scss';
 @import './components/priv-policy.scss';
+@import './components/button.scss';
+@import './components/footer.scss';
 
-.thanks,
-.error {
-  display: flex;
-  height: 100%;
-  flex-direction: column;
+.thanks {
+  padding-bottom: 50px;
+  @include bg;
+  background-image: url('/src/img/bgs/thanks-bg.jpg');
 
-  &__body {
-    background-color: black;
-  }
-
-  &__body,
-  &__html {
-    height: 100%;
-  }
-
-  &__header {
-    overflow: hidden;
-    flex: 0 0 auto;
-    padding-top: 20px;
+  @media (max-width: 650px) {
     padding-bottom: 30px;
-  }
-
-  .container {
-    max-width: 1140px;
-  }
-
-  footer {
-    flex: 0 0 auto;
-  }
-
-  &__content {
-    flex: 1 0 auto;
-    padding: 40px 0;
-
-    .container {
-      height: 100%;
-    }
-  }
-
-  &__content-wrapper {
-    display: flex;
-    height: 100%;
-    align-items: center;
-  }
-
-  &__content-box {
-    width: 100%;
-  }
-
-  &__title {
-    color: white;
-    font-size: 30px;
-    font-weight: 500;
-    text-align: center;
-  }
-
-  &__user-name {
-    text-transform: uppercase;
-  }
-
-  &__subtitle {
-    margin-top: 40px;
-    margin-bottom: 20px;
-    color: white;
-    font-size: 18px;
-    text-align: center;
-  }
-
-  &__link {
-    &:hover,
-    &:focus {
-      text-decoration: none;
-    }
-  }
-
-  &__btn-box {
-    display: flex;
-    justify-content: center;
   }
 }
 
-.error {
-  &__btn-box {
-    margin-top: 20px;
+.thanks__header {
+  padding-top: 38px;
+  padding-bottom: 80px;
+
+  @media (max-width: 991px) {
+    padding-bottom: 50px;
+  }
+
+  @media (max-width: 767px) {
+    padding-bottom: 30px;
+  }
+}
+
+.thanks__logo {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.thanks__title {
+  @include max-width(980px);
+  font-size: 46px;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  font-weight: bold;
+  line-height: 1.37;
+  margin-bottom: 50px;
+
+  @media (max-width: 991px) {
+    font-size: 36px;
+  }
+
+  @media (max-width: 650px) {
+    font-size: 23px;
+    margin-bottom: 20px;
+  }
+}
+
+.thanks__text {
+  font-size: 23px;
+  color: $yellow;
+  text-align: center;
+  margin-bottom: 51px;
+
+  @media (max-width: 650px) {
+    font-size: 16px;
+    margin-bottom: 20px;
+  }
+}
+
+.thanks__time-container {
+  border: solid 1px #fcee21;
+  padding-top: 25px;
+  padding-bottom: 23px;
+  padding-left: 38px;
+  padding-right: 38px;
+  display: flex;
+  align-items: center;
+  margin-bottom: 45px;
+
+  @media (max-width: 850px) {
+    flex-direction: column;
+    align-items: flex-start;
+    padding-right: 10px;
+  }
+
+  @media (max-width: 650px) {
+    padding-left: 15px;
+    margin-bottom: 30px;
+  }
+}
+
+.thanks__time-left-box {
+  border-right: 1px solid #fcee21;
+  width: 56%;
+  padding-left: 79px;
+  position: relative;
+  padding-right: 10px;
+
+  @media (max-width: 850px) {
+    width: 100%;
+    border-right: none;
+    border-bottom: 1px solid #fcee21;
+    padding-right: 0;
+    padding-bottom: 10px;
+  }
+
+  @media (max-width: 650px) {
+    padding-left: 0px;
+  }
+
+  &::before {
+    content: url('/src/img/icons/calendar.svg');
+    width: 63px;
+    height: 62px;
+    position: absolute;
+    left: 0px;
+    top: 50%;
+    transform: translateY(-50%);
+
+    @media (max-width: 650px) {
+      content: none;
+    }
+  }
+}
+
+.thanks__time-left-text {
+  font-size: 15px;
+  margin-bottom: 0;
+
+  b {
+    color: #ffdd00;
+  }
+}
+
+.thanks__time-right-box {
+  padding-left: 45px;
+
+  @media (max-width: 850px) {
+    padding-left: 0;
+    padding-top: 10px;
+  }
+}
+
+.thanks__time-right-text {
+  margin-bottom: 0;
+  font-size: 15px;
+
+  @media (max-width: 650px) {
+    br {
+      display: none;
+    }
+  }
+}
+
+.thanks__link {
+  text-align: center;
+  font-weight: bold;
+  text-decoration: underline;
+  color: white;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+
+  @media (max-width: 650px) {
+    font-size: 16px;
+  }
+
+  &:hover,
+  &:focus,
+  &:active {
+    color: white;
   }
 }

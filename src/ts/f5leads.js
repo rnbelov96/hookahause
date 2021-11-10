@@ -5,6 +5,8 @@ const validateForm = form => {
   const phoneInputEl = form.querySelector('[data-type="phone"]');
   const emailInputEl = form.querySelector('[data-type="email"]');
   const cityInputEl = form.querySelector('[data-type="city"]');
+  const checkboxInputEl = form.querySelector('[type="checkbox"]');
+  const checkboxLabelEl = form.querySelector('label');
 
   let isOk = true;
 
@@ -22,6 +24,11 @@ const validateForm = form => {
   }
   if (cityInputEl && cityInputEl.value === '') {
     cityInputEl.classList.add('input-error');
+    isOk = false;
+  }
+
+  if (checkboxInputEl && !checkboxInputEl.checked) {
+    checkboxLabelEl.classList.add('checkbox-input-error');
     isOk = false;
   }
 
