@@ -1,0 +1,157 @@
+.economy {
+  min-height: 1295px;
+  background-image: url('/src/img/bgs/economy-bg.jpg');
+  @include bg;
+  background-position-x: right;
+  background-size: contain;
+  padding-top: 88px;
+  padding-bottom: 85px;
+
+  @media (max-width: 1250px) {
+    min-height: auto;
+    background-image: none;
+    padding-bottom: 50px;
+  }
+
+  @media (max-width: 991px) {
+    min-height: auto;
+    padding-top: 50px;
+  }
+
+  @media (max-width: 767px) {
+    padding-top: 40px;
+    padding-bottom: 40px;
+  }
+
+  @media (max-width: 650px) {
+    padding-bottom: 30px;
+  }
+}
+
+.economy__title {
+  @include title;
+  @include max-width(548px);
+  margin-bottom: 68px;
+  position: relative;
+
+  &::before {
+    z-index: -1;
+    position: absolute;
+    content: url('/src/img/economy-smoke.png');
+    top: -90px;
+    left: -50px;
+    opacity: 0.34;
+
+    @media (max-width: 991px) {
+      top: -30px;
+    }
+
+    @media (max-width: 650px) {
+      content: none;
+    }
+  }
+
+  &::after {
+    position: absolute;
+    content: url('/src/img/rating-notebook.png');
+    right: -985px;
+    top: -888px;
+
+    @media (max-width: 991px) {
+      content: none;
+    }
+  }
+
+  @media (max-width: 650px) {
+    b {
+      display: none;
+    }
+  }
+}
+
+.economy__content {
+  @include max-width(959px);
+  position: relative;
+  left: -48px;
+  background-color: rgba(#5a015b, 0.9);
+  padding-top: 75px;
+  padding-left: 50px;
+  padding-right: 72px;
+  padding-bottom: 75px;
+
+  @media (max-width: 1250px) {
+    left: 0px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  @media (max-width: 650px) {
+    padding-top: 30px;
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-bottom: 30px;
+  }
+}
+
+.economy__text {
+  font-family: 'PTSans';
+  margin-bottom: 28px;
+
+  @media (max-width: 650px) {
+    margin-bottom: 20px;
+  }
+}
+
+.economy__list-title {
+  font-family: 'PTSans';
+  color: $yellow;
+  margin-bottom: 28px;
+  font-size: 23px;
+  font-weight: bold;
+
+  @media (max-width: 650px) {
+    margin-bottom: 15px;
+  }
+}
+
+.economy__list {
+  @include reset-list;
+  margin-bottom: 25px;
+}
+
+.economy__item {
+  padding-left: 55px;
+  font-family: 'PTSans';
+  margin-bottom: 30px;
+  position: relative;
+
+  @media (max-width: 650px) {
+    font-size: 16px;
+    margin-bottom: 15px;
+  }
+
+  @for $i from 1 through 8 {
+    &:nth-child(#{$i})::before {
+      content: url('/src/img/icons/economy/#{$i}.svg');
+    }
+  }
+
+  &::before {
+    position: absolute;
+    left: 0px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 44px;
+    height: 44px;
+  }
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.economy__note {
+  font-family: 'PTSans';
+  margin-bottom: 0;
+  font-size: 23px;
+}

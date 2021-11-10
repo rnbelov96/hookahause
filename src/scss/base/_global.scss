@@ -28,14 +28,23 @@ main {
   max-width: 1144px;
   margin: 0 auto;
 
-  &_market, &_digits, &_grow, &_gains {
+  &_market,
+  &_digits,
+  &_grow,
+  &_gains,
+  &_rating,
+  &_economy {
     &::before {
       position: absolute;
-      left: -0px;
+      left: -43px;
       top: -134px;
       content: url('/src/img/icons/coal.svg');
       width: 269px;
       height: 64px;
+
+      @media (max-width: 1230px) {
+        left: 0px;
+      }
 
       @media (max-width: 900px) {
         top: -99px !important;
@@ -43,6 +52,42 @@ main {
 
       @media (max-width: 767px) {
         top: -89px !important;
+      }
+    }
+  }
+
+  &_economy {
+    &::before {
+      top: -137px;
+
+      @media (max-width: 991px) {
+        top: -99px;
+      }
+    }
+  }
+
+  &_rating {
+    &::before {
+      top: -124px;
+
+      @media (max-width: 991px) {
+        top: -99px;
+      }
+    }
+  }
+
+  &_calc {
+    &::before {
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      top: -129px;
+      content: url('/src/img/icons/coal2.svg');
+      width: 455px;
+      height: 64px;
+
+      @media (max-width: 991px) {
+        top: -99px;
       }
     }
   }

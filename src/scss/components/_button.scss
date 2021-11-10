@@ -25,7 +25,7 @@
 
   &_present {
     display: none;
-    
+
     @media (max-width: 650px) {
       display: block;
     }
@@ -41,6 +41,14 @@
     @media (max-width: 991px) {
       max-width: 359px;
     }
+  }
+
+  &_calc {
+    max-width: 335px;
+    position: absolute;
+    bottom: 0px;
+    transform: translateX(-50%) translateY(50%);
+    left: 50%;
   }
 
   &:hover {

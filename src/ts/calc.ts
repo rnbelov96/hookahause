@@ -1,16 +1,20 @@
 /* eslint-disable no-param-reassign */
 export {};
 
-const leftColor = '#FADE40';
-const rightColor = '#ffffff';
+const leftColor = '#ffdd00';
+const rightColor = '#000';
 
 const rangeElList = document.querySelectorAll('.js-range');
 
-const rentRange = document.querySelector('.js-rent-range') as HTMLInputElement;
-const trainingRange = document.querySelector(
-  '.js-training-range',
+const clientsRange = document.querySelector(
+  '.js-clients-range',
 ) as HTMLInputElement;
-const roomRange = document.querySelector('.js-room-range') as HTMLInputElement;
+const deliveryRange = document.querySelector(
+  '.js-delivery-range',
+) as HTMLInputElement;
+const monthRange = document.querySelector(
+  '.js-month-range',
+) as HTMLInputElement;
 
 const resultLabelEl = document.querySelector(
   '.js-calc-result',
@@ -18,13 +22,24 @@ const resultLabelEl = document.querySelector(
 
 let result: number;
 
-let personCurrentStep = 2;
-let adultsCurrentStep = 2;
-let kidsCurrentStep = 2;
+let clientsCurrentStep = 3;
+let deliveryCurrentStep = 3;
+let monthCurrentStep = 3;
+
+const clientsEndpointElList = document.querySelectorAll(
+  '.js-clients-endpoints .calc__endpoint-dot',
+);
+const deliveryEndpointElList = document.querySelectorAll(
+  '.js-delivery-endpoints .calc__endpoint-dot',
+);
+const monthEndpointElList = document.querySelectorAll(
+  '.js-month-endpoints .calc__endpoint-dot',
+);
 
 const calcResult = () => {
-  result = (Number(rentRange.value) * 4500 + Number(trainingRange.value) * 10500)
-    * Number(roomRange.value);
+  result = (Number(clientsRange.value) * 4500 + Number(deliveryRange.value) * 500)
+    * Number(monthRange.value)
+    * 0.01;
   resultLabelEl.textContent = result.toLocaleString();
   return result;
 };
@@ -45,49 +60,85 @@ rangeElList.forEach(el => {
   )}%, ${rightColor} 100%)`;
 });
 
-rentRange.addEventListener('input', e => {
+clientsRange.addEventListener('input', e => {
   const rangeEl = e.currentTarget as HTMLInputElement;
 
   const steps = (Number(rangeEl.max) - Number(rangeEl.min)) / Number(rangeEl.step);
 
-  personCurrentStep = (Number(rangeEl.value) - Number(rangeEl.min)) / Number(rangeEl.step);
+  const processPrevStep = clientsCurrentStep;
+
+  clientsCurrentStep = (Number(rangeEl.value) - Number(rangeEl.min)) / Number(rangeEl.step);
+
+  if (processPrevStep < clientsCurrentStep) {
+    clientsEndpointElList[clientsCurrentStep].classList.add(
+      'calc__endpoint-dot_active',
+    );
+  } else {
+    clientsEndpointElList[processPrevStep].classList.remove(
+      'calc__endpoint-dot_active',
+    );
+  }
 
   rangeEl.style.background = `linear-gradient(to right, ${leftColor} 0%, ${leftColor} ${String(
-    (personCurrentStep / steps) * 100,
+    (clientsCurrentStep / steps) * 100,
   )}%, ${rightColor} ${String(
-    (personCurrentStep / steps) * 100,
+    (clientsCurrentStep / steps) * 100,
   )}%, ${rightColor} 100%)`;
 
   calcResult();
 });
 
-trainingRange.addEventListener('input', e => {
+deliveryRange.addEventListener('input', e => {
   const rangeEl = e.currentTarget as HTMLInputElement;
 
   const steps = (Number(rangeEl.max) - Number(rangeEl.min)) / Number(rangeEl.step);
 
-  adultsCurrentStep = (Number(rangeEl.value) - Number(rangeEl.min)) / Number(rangeEl.step);
+  const checkinPrevStep = deliveryCurrentStep;
+
+  deliveryCurrentStep = (Number(rangeEl.value) - Number(rangeEl.min)) / Number(rangeEl.step);
+
+  if (checkinPrevStep < deliveryCurrentStep) {
+    deliveryEndpointElList[deliveryCurrentStep].classList.add(
+      'calc__endpoint-dot_active',
+    );
+  } else {
+    deliveryEndpointElList[checkinPrevStep].classList.remove(
+      'calc__endpoint-dot_active',
+    );
+  }
 
   rangeEl.style.background = `linear-gradient(to right, ${leftColor} 0%, ${leftColor} ${String(
-    (adultsCurrentStep / steps) * 100,
+    (deliveryCurrentStep / steps) * 100,
   )}%, ${rightColor} ${String(
-    (adultsCurrentStep / steps) * 100,
+    (deliveryCurrentStep / steps) * 100,
   )}%, ${rightColor} 100%)`;
 
   calcResult();
 });
 
-roomRange.addEventListener('input', e => {
+monthRange.addEventListener('input', e => {
   const rangeEl = e.currentTarget as HTMLInputElement;
 
   const steps = (Number(rangeEl.max) - Number(rangeEl.min)) / Number(rangeEl.step);
 
-  kidsCurrentStep = (Number(rangeEl.value) - Number(rangeEl.min)) / Number(rangeEl.step);
+  const workshopPrevStep = monthCurrentStep;
+
+  monthCurrentStep = (Number(rangeEl.value) - Number(rangeEl.min)) / Number(rangeEl.step);
+
+  if (workshopPrevStep < monthCurrentStep) {
+    monthEndpointElList[monthCurrentStep].classList.add(
+      'calc__endpoint-dot_active',
+    );
+  } else {
+    monthEndpointElList[workshopPrevStep].classList.remove(
+      'calc__endpoint-dot_active',
+    );
+  }
 
   rangeEl.style.background = `linear-gradient(to right, ${leftColor} 0%, ${leftColor} ${String(
-    (kidsCurrentStep / steps) * 100,
+    (monthCurrentStep / steps) * 100,
   )}%, ${rightColor} ${String(
-    (kidsCurrentStep / steps) * 100,
+    (monthCurrentStep / steps) * 100,
   )}%, ${rightColor} 100%)`;
 
   calcResult();
