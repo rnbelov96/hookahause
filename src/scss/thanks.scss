@@ -35,6 +35,11 @@
   display: block;
   margin-left: auto;
   margin-right: auto;
+
+  @media (max-width: 650px) {
+    width: 170px;
+    height: auto;
+  }
 }
 
 .thanks__title {
