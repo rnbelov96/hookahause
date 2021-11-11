@@ -83,9 +83,29 @@
     }
   }
 
+  &:nth-child(1) .rating__item-text::before {
+    width: 80px;
+    height: 80px;
+  }
+
+  &:nth-child(2) .rating__item-text::before {
+    width: 66px;
+    height: 69px;
+  }
+
+  &:nth-child(3) .rating__item-text::before {
+    width: 69px;
+    height: 69px;
+  }
+
+  &:nth-child(4) .rating__item-text::before {
+    width: 79px;
+    height: 69px;
+  }
+
   @for $i from 1 through 4 {
     &:nth-child(#{$i}) .rating__item-text::before {
-      content: url('/src/img/icons/rating/#{$i}.png');
+      content: url('/src/img/icons/rating/#{$i}.svg');
     }
   }
 }
