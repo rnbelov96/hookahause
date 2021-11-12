@@ -69,8 +69,11 @@
   padding-right: 63px;
   padding-bottom: 25px;
   padding-top: 29px;
-  min-height: 161px;
+  min-height: 123px;
   background-color: #323f6c;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
   @media (max-width: 991px) {
     padding-left: 15px;
