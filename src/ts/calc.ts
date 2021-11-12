@@ -16,9 +16,7 @@ const monthRange = document.querySelector(
   '.js-month-range',
 ) as HTMLInputElement;
 
-const resultLabelEl = document.querySelector(
-  '.js-calc-result',
-) as HTMLSpanElement;
+const resultLabelElList = document.querySelectorAll('.js-calc-result');
 
 let result: number;
 
@@ -40,7 +38,11 @@ const calcResult = () => {
   result = (Number(clientsRange.value) * 4500 + Number(deliveryRange.value) * 500)
     * Number(monthRange.value)
     * 0.01;
-  resultLabelEl.textContent = result.toLocaleString();
+
+  resultLabelElList.forEach(resultLabelEl => {
+    resultLabelEl.textContent = result.toLocaleString();
+  });
+
   return result;
 };
 

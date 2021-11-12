@@ -6,6 +6,8 @@
   background-position-x: left;
   padding-top: 75px;
   padding-bottom: 10px;
+  position: relative;
+  z-index: 1;
 
   @media (max-width: 991px) {
     min-height: auto;

@@ -237,3 +237,32 @@
     font-size: 20px !important;
   }
 }
+
+.calc__img-box {
+  width: 900px;
+  height: 772px;
+  position: absolute;
+  background-image: url('/src/img/calc-hands.png');
+  z-index: -1;
+  bottom: -104px;
+  right: -265px;
+
+  @media (max-width: 1100px) {
+    right: -227px;
+  }
+
+  @media (max-width: 991px) {
+    display: none;
+  }
+}
+
+.calc__img-caption {
+  font-family: 'Neo Sans';
+  font-weight: 300;
+  font-size: 40px;
+  position: absolute;
+  margin-bottom: 0;
+  right: 63px;
+  top: 88px;
+  transform: rotate(12deg) rotateY(345deg);
+}
