@@ -35,9 +35,8 @@ const monthEndpointElList = document.querySelectorAll(
 );
 
 const calcResult = () => {
-  result = (Number(clientsRange.value) * 4500 + Number(deliveryRange.value) * 500)
-    * Number(monthRange.value)
-    * 0.01;
+  result = (Number(clientsRange.value) * 390 + Number(deliveryRange.value) * 500)
+    * (Number(monthRange.value) === 0 ? 1 : Number(monthRange.value));
 
   resultLabelElList.forEach(resultLabelEl => {
     resultLabelEl.textContent = result.toLocaleString();

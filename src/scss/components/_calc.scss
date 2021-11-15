@@ -74,7 +74,7 @@
 }
 
 .calc__endpoint {
-  width: 30px;
+  width: 39px;
   text-align: center;
   font-size: 18px;
   color: black;
@@ -82,6 +82,14 @@
 
   @media (max-width: 650px) {
     font-size: 13px;
+  }
+
+  &_medium {
+    width: 29px;
+  }
+
+  &_small {
+    width: 16px;
   }
 }
 
@@ -98,6 +106,17 @@
 
   &_active {
     background-color: #ffdd00;
+  }
+
+  &_left {
+    transform: translateX(0);
+    left: 0px;
+  }
+
+  &_right {
+    transform: translateX(0);
+    right: 0px;
+    left: initial;
   }
 }
 
@@ -228,7 +247,7 @@
 }
 
 .calc__result {
-  font-size: 50px;
+  font-size: 46px;
   font-weight: bold;
   margin-bottom: 0;
   color: black;
@@ -262,7 +281,9 @@
   font-size: 40px;
   position: absolute;
   margin-bottom: 0;
-  right: 63px;
-  top: 88px;
+  right: 54px;
+  top: 91px;
   transform: rotate(12deg) rotateY(345deg);
+  width: 179.64px;
+  text-align: right;
 }
