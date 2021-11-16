@@ -54,8 +54,6 @@ formsList.forEach(form => {
   cityInputEl?.addEventListener('focus', onFocus);
 
   checkboxLabelEl?.addEventListener('click', e => {
-    (e.currentTarget as HTMLLabelElement).classList.remove(
-      'checkbox-input-error',
-    );
+    e.preventDefault();
   });
 });
